@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Producto;
+use Illuminate\Support\Facades\Auth;
 
 class ProductoController extends Controller
 {
@@ -12,8 +13,9 @@ class ProductoController extends Controller
      */
     public function index()
     {
-        $obtProd=Producto::all();
-        return view('vistaProductos',['productos'=>$obtProd]);
+        $user=Auth::user();
+        $productos=Producto::all();
+        return view('vistaProductos',compact('user','productos'));
     }
 
     /**
@@ -21,8 +23,9 @@ class ProductoController extends Controller
      */
     public function create()
     {
+        $user=Auth::user();
         $productos=Producto::all();
-        return view('CrearForm',compact('productos'));
+        return view('CrearForm',compact('user','productos'));
     }
 
     /**
@@ -44,7 +47,7 @@ class ProductoController extends Controller
         ]);
 
 
-        return redirect('/redirigir1');
+        return redirect('usuarioName');
     }
 
     /**
@@ -57,7 +60,7 @@ class ProductoController extends Controller
         return 'No hay productos registrados';
         }
 
-        return view('prodRegistrados', ['devolver' => $devolver]);
+        return view('welcome');
 
     }
 
@@ -66,8 +69,9 @@ class ProductoController extends Controller
      */
     public function edit(Producto $id)
     {
+         $user=Auth::user();
         $productos=Producto::all();
-        return view ('yield-section',compact('id','productos'));
+        return view ('EditarProd',compact('id','productos','user'));
     }
 
     /**

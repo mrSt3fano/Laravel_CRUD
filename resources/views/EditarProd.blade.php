@@ -4,7 +4,6 @@
 
 @section('formulario')
 
-    {{-- Contenedor principal con fondo ligero y centrado --}}
     <div class="min-h-screen flex items-start justify-center bg-gray-50 p-6">
 
         {{-- Tarjeta del formulario --}}
@@ -16,11 +15,9 @@
 
             <form action="/verActualizado/{{ $id->id }}" method="POST">
 
-                {{-- Campos de seguridad obligatorios --}}
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="_method" value="PUT">
 
-                {{-- Campo Nombre --}}
                 <div class="mb-4">
                     <label for="nombreProducto" class="block text-sm font-medium text-gray-700 mb-1">Nombre:</label>
                     <input
@@ -34,7 +31,6 @@
                     @enderror
                 </div>
 
-                {{-- Campo Precio --}}
                 <div class="mb-4">
                     <label for="precioProducto" class="block text-sm font-medium text-gray-700 mb-1">Precio:</label>
                     <input
@@ -49,7 +45,6 @@
                     @enderror
                 </div>
 
-                {{-- Campo Stock --}}
                 <div class="mb-6">
                     <label for="stockProducto" class="block text-sm font-medium text-gray-700 mb-1">Stock:</label>
                     <input
@@ -63,7 +58,6 @@
                     @enderror
                 </div>
 
-                {{-- Botón de Envío --}}
                 <button
                     type="submit"
                     class="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition duration-150 ease-in-out">

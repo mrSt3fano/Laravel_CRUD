@@ -25,6 +25,8 @@ class normal
                 return redirect()->route('administradorName');
             case 1:
                 return redirect()->route('gerenciaName');
+            default:
+                abort(403, 'Rol de usuario no autorizado o inválido.');
         }
     }
 }

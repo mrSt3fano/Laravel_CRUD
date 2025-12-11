@@ -7,53 +7,97 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# Sobre el proyecto hecho en Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Esta aplicación funciona como un Sistema de Gestión de Inventario con 3 usuarios registrados, 2 tienen permiso de administrador y el usuario normal solo tiene acceso a los productos pero no admite modificaciones, el cual tiene las siguientes funcionalidades:
+    CRUD:
+        Create: Crea registros nuevos en una base de datos MySQL
+        Read: Lee los productos registrados
+        Update: Actualiza cada producto
+        Delete: Elimina cada producto
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Requisitos
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Tener instalado Git, configurar nombre y correo por consola por primera y unica vez
+Tener instalado VS Code
+Tener instalado XAMPP u otra base de datos 
+Tener un navegador web
+Tener instalado una terminal(sirve cmd, gitbash, )
 
-## Learning Laravel
+## Instalación y Configuración
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+Sigue estos pasos para poner la aplicación en marcha en tu entorno local.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 1. Si es tu primer repositorio
+    Crea un nuevo repositorio en GitHub y obtén la url
 
-## Laravel Sponsors
+### 2. Crear carpeta
+    Crea una carpeta, luego haz click en la ruta de la carpeta y reemplázala escribiendo cmd
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 3. Acceder a VS Code
+    Cuando se abra la terminal escribe 'code .'
 
-### Premium Partners
+### 4. Clonar el Repositorio
+    Asegúrate de acceder a la carpeta correcta del proyecto
+    
+    Usa 'ctrl j' para abrir la terminal
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+cd ruta-de-proyecto
+git clone [URL_DE_REPOSITORIO]
+```
 
-## Contributing
+    Asegúrese de estar en la rama 'rama1', sino puede ejecutar
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+git switch [NOMBRE_DE_RAMA]
+```
 
-## Code of Conduct
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### 5. Configurar archivo .env
+    Aqui establezca los valores de su base de datos
 
-## Security Vulnerabilities
+    DB_CONNECTION=mysql
+    # DB_HOST=127.0.0.1
+    # DB_PORT=3306
+    # DB_DATABASE=
+    # DB_USERNAME=root
+    # DB_PASSWORD=
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
 
-## License
+## Ejecutar
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+En la terminal escribe 'php artisan serve' para ejecutar el proyecto, accede a la URL
+
+## Instalar dependencias
+
+Si hay algún error con las dependencias, puedes instalarlas usando 'composer install'
+
+## Cuando ingresas puedes usar las siguientes credenciales
+
+Rol de Gerente:
+stefano13soto@gmail.com
+password
+
+Rol de Administrador:
+venera2@gmail.com
+password
+
+Rol de Usuario:
+abcdefg888hijklmn@gmail.com
+password
+
+## Registro de usuario
+
+El nivel de acceso a nuevos usuarios es de usuario normal, si desea cambiar un rol puede hacerlo por
+el XAMPP, usando el comando 'php artisan tinker'
+
+### 1. Modificar con php artisan tinker
+    ejecute lo siguiente en la linea de comandos una a la vez:
+
+        -use App\Models\User;           //  importa el modelo User
+        -$usern = User::find(a)         //  reemplace 'a' por el id del usuario que aparece en el XAMPP
+        -$usern->rol=n;                //   reemplace 'n' por 1->gerente, 2->administrador, 3->usuario
+        -$usern->save();                //  guarda los cambios
+        -echo $usern                   //   imprime el nuevo usuario
+        -exit                           // salir
