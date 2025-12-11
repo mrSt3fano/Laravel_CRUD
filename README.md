@@ -11,9 +11,9 @@
 
 Esta aplicación funciona como un Sistema de Gestión de Inventario con 3 usuarios registrados, 2 tienen permiso de administrador y el usuario normal solo tiene acceso a los productos pero no admite modificaciones, el cual tiene las siguientes funcionalidades:
     CRUD:
-        Create: Crea registros nuevos en una base de datos MySQL
-        Read: Lee los productos registrados
-        Update: Actualiza cada producto
+        Create: Crea registros nuevos en una base de datos MySQL|
+        Read: Lee los productos registrados|
+        Update: Actualiza cada producto|
         Delete: Elimina cada producto
 
 ## Requisitos
@@ -28,34 +28,40 @@ Tener instalado una terminal(sirve cmd, gitbash, )
 
 Sigue estos pasos para poner la aplicación en marcha en tu entorno local.
 
-### 1. Si es tu primer repositorio
-    Crea un nuevo repositorio en GitHub y obtén la url
+### 1. Crea un nuevo repositorio en GitHub y obtén la url
+   
 
-### 2. Crear carpeta
-    Crea una carpeta, luego haz click en la ruta de la carpeta y reemplázala escribiendo cmd
+### 2. Crea una carpeta, luego haz click en la ruta de la carpeta y reemplázala escribiendo
+    cmd
 
-### 3. Acceder a VS Code
-    Cuando se abra la terminal escribe 'code .'
+### 3. Acceder a VS Code y cuando se abra la terminal escribe
+    code .
 
-### 4. Clonar el Repositorio
-    Asegúrate de acceder a la carpeta correcta del proyecto
-    
-    Usa 'ctrl j' para abrir la terminal
+### IMPORTANTE debe asegurarse de estar en la carpeta correcta
+
+### 4. Clonar el Repositorio Asegúrate de acceder a la carpeta correcta del proyecto, usa ctrl j para abrir la terminal
+
 
 ```bash
 cd ruta-de-proyecto
-git clone [URL_DE_REPOSITORIO]
 ```
-
-    Asegúrese de estar en la rama 'rama1', sino puede ejecutar
 
 ```bash
-git switch [NOMBRE_DE_RAMA]
+git clone https://github.com/mrSt3fano/Laravel_CRUD
 ```
 
+### 5. Asegúrese de estar en la rama 'rama1', sino puede ejecutar
 
-### 5. Configurar archivo .env
-    Aqui establezca los valores de su base de datos
+```bash
+git switch rama1
+```
+
+### 6. Configurar archivo .env
+
+
+```bash
+copy .env.example .env
+```
 
     DB_CONNECTION=mysql
     # DB_HOST=127.0.0.1
@@ -64,14 +70,38 @@ git switch [NOMBRE_DE_RAMA]
     # DB_USERNAME=root
     # DB_PASSWORD=
 
+### 7. Instalar dependencias de laravel
 
-## Ejecutar
+```bash
+composer install
+```
 
-En la terminal escribe 'php artisan serve' para ejecutar el proyecto, accede a la URL
+### 8. Ejecutar clave 
 
-## Instalar dependencias
 
-Si hay algún error con las dependencias, puedes instalarlas usando 'composer install'
+```bash
+php artisan key:generate
+```
+### IMPORTANTE recuerde estar en la carpeta correcta
+
+### 9. Instalar dependencias frontend - RECOMENDADO ejecutar en cmd
+
+```bash
+npm install
+```
+
+
+```bash
+npm run build
+```
+
+## Ejecutar en la terminal para ejecutar el proyecto
+
+
+```bash
+php artisan serve
+```
+
 
 ## Cuando ingresas puedes usar las siguientes credenciales
 

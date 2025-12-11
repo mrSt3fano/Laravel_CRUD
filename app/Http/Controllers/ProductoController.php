@@ -47,7 +47,7 @@ class ProductoController extends Controller
         ]);
 
 
-        return redirect('usuarioName');
+         return redirect('/productos');
     }
 
     /**
@@ -60,7 +60,7 @@ class ProductoController extends Controller
         return 'No hay productos registrados';
         }
 
-        return view('welcome');
+         return redirect('/productos');
 
     }
 
@@ -91,7 +91,7 @@ class ProductoController extends Controller
             'precio'=>$request->precioProducto,
             'stock'=>$request->stockProducto
         ]);
-        return view('welcome');
+        return redirect('/productos');
     }
 
     /**
@@ -100,6 +100,6 @@ class ProductoController extends Controller
     public function destroy(Producto $id)
     {
         $id->delete();
-        return view('welcome');
+        return redirect('/productos');
     }
 }
